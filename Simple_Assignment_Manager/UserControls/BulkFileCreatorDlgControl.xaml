@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="Simple_Assignment_Manager.UserControls.BulkFileCreatorDlgControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Simple_Assignment_Manager.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" FontSize="10" Foreground="White" FontWeight="Regular">
+
+    <Grid Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="14" Text="Create Files in Bulk" Margin="0 20 0 40"/>
+
+        <Grid Grid.Row="1" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+
+                <ColumnDefinition Width="auto"/>
+
+                <ColumnDefinition Width="auto"/>
+
+                <ColumnDefinition Width="auto"/>
+
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="1" Grid.Row="0" Margin="0 4 0 0" Text="Path to folder to create new files in:"/>
+
+            <TextBox x:Name="chosen_folder_path_box" Padding="2" Grid.Column="2" Grid.Row="0" Width="300" Margin="10 0 0 20"/>
+
+            <Button x:Name="show_folder_dlg_btn" VerticalAlignment="Top" Padding="4 0 4 0" Height="20" Grid.Column="3" Grid.Row="0" Content="Choose Folder" Margin="10 0 0 0" Click="choose_path_from_file_dlg_btn_Click"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="1" Margin="0 4 0 0" Text="Prefix for file names:"/>
+
+            <TextBox x:Name="chosen_file_name_prefix_box" Padding="2" Grid.Column="2" Grid.Row="1" Width="300" Margin="10 0 0 20"/>
+
+            <TextBlock Text="File extension (e.g. .txt .py .csv):" Grid.Column="1" Grid.Row="2"/>
+
+            <TextBox x:Name="chosen_file_extension_box" Padding="2" Grid.Column="2" Grid.Row="2" Height="20" Margin="10 0 0 20"/>
+
+            <TextBlock Text="Number of files to create:" Grid.Column="1" Grid.Row="3"/>
+
+            <TextBox x:Name="creation_count_box" Padding="2" Grid.Column="2" Grid.Row="3" Height="20" Margin="10 0 0 20"/>
+
+            <TextBlock Text="(Optional) Enter in some text to be written into each of the created files:" Grid.Column="1" Grid.Row="4"/>
+
+            <ScrollViewer Height="50" MaxWidth="300" Grid.Column="2" Grid.Row="4" VerticalScrollBarVisibility="Auto" Margin="10 0 0 40">
+                <TextBox x:Name="initial_file_content_box" TextWrapping="Wrap"/>
+            </ScrollViewer>
+        </Grid>
+
+        <Button x:Name="create_files_btn" Content="Create Files" Height="30" Width="100" Margin="0 0 0 20" HorizontalAlignment="Center" Background="SlateGray" Foreground="White" Grid.Column="0" Grid.Row="2"/>
+
+        <TextBlock x:Name="file_creation_result_label" Visibility="Collapsed" Margin="0 24 0 0" Foreground="LightGreen" Text="Files created successfully." Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center"/>
+    </Grid>
+
+</UserControl>

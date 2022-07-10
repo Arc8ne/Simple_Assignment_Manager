@@ -1,0 +1,69 @@
+﻿<Window x:Class="Simple_Assignment_Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Simple_Assignment_Manager"
+        xmlns:user_controls="clr-namespace:Simple_Assignment_Manager.UserControls"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        ResizeMode="CanResizeWithGrip" Closing="on_main_window_close"
+        Title="Assignment Manager" Height="600" Width="1000" FontSize="16" FontWeight="Bold" Foreground="White">
+
+    <Border RenderOptions.EdgeMode="Aliased" Background="DarkSlateGray" CornerRadius="5" BorderThickness="2 2 2 2" BorderBrush="Gray" MouseLeftButtonDown="on_main_window_border_clicked">
+        <Grid x:Name="window_content_grid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <user_controls:MainNavBarUserControl x:Name="main_nav_bar" Grid.Column="0" Grid.Row="1" Grid.RowSpan="3"/>
+
+            <Border x:Name="top_sys_bar" CornerRadius="5 5 0 0" Background="Gray" BorderBrush="DimGray" BorderThickness="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Margin="-2 -2 -2 0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock x:Name="main_window_title" VerticalAlignment="Center" Margin="6 0 0 0" FontSize="12" FontWeight="Light" Text="Assignments Manager" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch"/>
+
+                    <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 6 6 6">
+                        <Button x:Name="minimize_btn" Foreground="White" Background="SlateGray" Padding="5" FontSize="10" FontWeight="Light" Content="Minimize" Margin="0 0 10 0" Click="minimize_btn_Click"/>
+
+                        <Button x:Name="maximize_btn" Foreground="White" Background="SlateGray" Padding="5" FontSize="10" FontWeight="Light" Content="Maximize" Margin="0 0 10 0" Click="maximize_btn_Click"/>
+
+                        <Button x:Name="close_btn" Foreground="White" Background="SlateGray" Padding="5" FontSize="10" FontWeight="Light" Content="Close" Click="close_btn_Click"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <TextBlock x:Name="initializing_label" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Initializing... Please wait" Grid.Column="1" Grid.Row="1" FontSize="14" Visibility="Collapsed"/>
+
+            <TextBlock x:Name="shut_down_label" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Shutting down application... Please wait" Grid.Column="1" Grid.Row="1" FontSize="14" Visibility="Collapsed"/>
+            
+            <user_controls:TasksViewerListControl x:Name="tasks_viewer_list_ui" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
+
+            <user_controls:AddTaskDlgUserControl x:Name="add_task_dlg_ui" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
+
+            <user_controls:ModulesViewerListControl x:Name="modules_viewer_list_ui" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
+
+            <user_controls:AddModuleDlgControl x:Name="add_module_dlg_ui" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
+
+            <user_controls:ExportDataAsCSVDlgControl x:Name="export_data_csv_dlg_ui" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
+
+            <user_controls:BulkFileCreatorDlgControl x:Name="bulk_file_creator_dlg_ui" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
+        </Grid>
+    </Border>
+</Window>

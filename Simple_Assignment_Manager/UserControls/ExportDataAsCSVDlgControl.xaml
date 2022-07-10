@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="Simple_Assignment_Manager.UserControls.ExportDataAsCSVDlgControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Simple_Assignment_Manager.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Foreground="White" FontWeight="Regular" FontSize="10">
+    
+    <Grid Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="export_dlg_header_label" Grid.Row="0" HorizontalAlignment="Center" FontSize="14" Text="Export Task Data as CSV" Margin="0 20 0 100"/>
+
+            <Grid Grid.Row="1" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+
+                    <ColumnDefinition Width="auto"/>
+
+                    <ColumnDefinition Width="auto"/>
+
+                    <ColumnDefinition Width="auto"/>
+
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="1" Grid.Row="0" Margin="0 4 0 0" Text="Path to folder to create the new CSV file in:"/>
+
+                <TextBox x:Name="csv_folder_path_box" Grid.Column="2" Grid.Row="0" Padding="2" Width="300" Margin="10 0 0 20"/>
+
+                <Button x:Name="choose_path_from_file_dlg_btn" VerticalAlignment="Top" Padding="4 0 4 0" Height="20" Grid.Column="3" Grid.Row="0" Content="Choose Folder" Margin="10 0 0 0" Click="choose_path_from_file_dlg_btn_Click"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="1" Margin="0 4 0 0" Text="Name of CSV file:"/>
+
+                <TextBox x:Name="csv_file_name_box" Grid.Column="2" Grid.Row="1" Padding="2" Width="300" Margin="10 0 0 60"/>
+            </Grid>
+
+            <Button x:Name="export_task_data_btn" Content="Export" Height="30" Width="100" Margin="0 0 0 20" HorizontalAlignment="Center" Background="SlateGray" Foreground="White" Grid.Column="0" Grid.Row="2"/>
+
+            <TextBlock x:Name="export_result_label" Visibility="Collapsed" Margin="0 24 0 0" Foreground="LightGreen" Text="Task data exported successfully." Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center"/>
+    </Grid>
+
+</UserControl>

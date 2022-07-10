@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="Simple_Assignment_Manager.UserControls.AddModuleDlgControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Simple_Assignment_Manager.UserControls"
+             mc:Ignorable="d" 
+             MaxHeight="600" d:DesignWidth="800" Foreground="White" FontWeight="Regular" FontSize="10">
+    
+    <Grid Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="14" Text="Add A New Module" Margin="0 20 0 100"/>
+
+        <Grid Grid.Row="1" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+
+                <ColumnDefinition Width="auto"/>
+
+                <ColumnDefinition Width="auto"/>
+
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="1" Grid.Row="0" Margin="0 4 0 0" Text="Module Name:"/>
+
+            <TextBox x:Name="module_name_box" Grid.Column="2" Grid.Row="0" Padding="2" Width="300" Margin="10 0 0 20"/>
+
+            <TextBlock Grid.Column="1" Grid.Row="1" Margin="0 4 0 0" Text="Module Grade:"/>
+
+            <ComboBox x:Name="module_grade_combo_box" FontSize="10" SelectedIndex="0" Grid.Column="2" Grid.Row="1" Padding="4" Width="300" Margin="10 0 0 20">
+                <ComboBoxItem Content="Not received"/>
+
+                <ComboBoxItem Content="AD*"/>
+
+                <ComboBoxItem Content="A+"/>
+
+                <ComboBoxItem Content="A"/>
+
+                <ComboBoxItem Content="B+"/>
+
+                <ComboBoxItem Content="B"/>
+
+                <ComboBoxItem Content="C+"/>
+
+                <ComboBoxItem Content="C"/>
+
+                <ComboBoxItem Content="D+"/>
+
+                <ComboBoxItem Content="D"/>
+
+                <ComboBoxItem Content="F"/>
+
+                <ComboBoxItem Content="PM"/>
+
+                <ComboBoxItem Content="PX"/>
+            </ComboBox>
+
+            <TextBlock Grid.Column="1" Grid.Row="2" Margin="0 4 0 0" Text="Module Credits:" FontSize="10"/>
+
+            <TextBox x:Name="module_credits_box" Grid.Column="2" Grid.Row="2" Padding="2" Width="300" Margin="10 0 0 60"/>
+        </Grid>
+
+        <Button x:Name="add_module_btn" Content="Add Module" Height="30" Width="100" Margin="0 0 0 20" HorizontalAlignment="Center" Background="SlateGray" Foreground="White" Grid.Column="0" Grid.Row="2"/>
+    </Grid>
+    
+</UserControl>

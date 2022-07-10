@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="Simple_Assignment_Manager.UserControls.MainNavBarUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Simple_Assignment_Manager.UserControls"
+             mc:Ignorable="d" Name="main_nav_bar_control"
+             d:DesignHeight="450" MaxWidth="800" FontSize="16" FontWeight="Light" Foreground="White">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"/>
+
+            <ColumnDefinition Width="*"/>
+
+            <ColumnDefinition Width="0"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+
+            <RowDefinition Height="auto"/>
+            
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Column="1" Grid.Row="1" BorderBrush="LightSlateGray" BorderThickness="0 0 0 4" Height="20" Margin="6 0 0 14">
+            <TextBlock Text="Functions" FontSize="12"/>
+        </Border>
+
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Vertical" Margin="6 0 10 0" HorizontalAlignment="Left">
+            <Button x:Name="view_tasks_btn" Background="SlateGray" Foreground="White" BorderThickness="0" FontSize="10"  Content="View Tasks" Padding="6" Margin="0 0 0 10" Width="140"/>
+
+            <Button x:Name="add_tasks_btn" Background="SlateGray" Foreground="White" BorderThickness="0" FontSize="10"  Content="Add Tasks" Padding="6" Margin="0 0 0 10" Width="140"/>
+
+            <Button x:Name="view_modules_btn" Background="SlateGray" Foreground="White" BorderThickness="0" FontSize="10" Content="View Modules" Padding="6" Margin="0 0 0 10" Width="140"/>
+
+            <Button x:Name="add_modules_btn" Background="SlateGray" Foreground="White" BorderThickness="0" FontSize="10" Content="Add Modules" Padding="6" Margin="0 0 0 10" Width="140"/>
+
+            <Button x:Name="export_task_data_btn" Background="SlateGray" Foreground="White" BorderThickness="0" FontSize="10"  Content="Export Task Data as CSV" Padding="6" Margin="0 0 0 10" Width="140"/>
+
+            <Button x:Name="export_module_data_btn" Background="SlateGray" Foreground="White" BorderThickness="0" FontSize="10"  Content="Export Module Data as CSV" Padding="6" Margin="0 0 0 10" Width="140"/>
+
+            <Button x:Name="bulk_file_creator_btn" Background="SlateGray" Foreground="White" BorderThickness="0" FontSize="10"  Content="Bulk File Creator" Padding="6" Margin="0 0 0 10" Width="140"/>
+
+            <Button Background="SlateGray" Foreground="White" BorderThickness="0" FontSize="10"  Content="Statistics" Padding="6" Margin="0 0 0 10" Width="140"/>
+
+            <Button Background="SlateGray" Foreground="White" BorderThickness="0" FontSize="10"  Content="GPA" Padding="6" Margin="0 0 0 10" Width="140"/>
+
+            <Button Background="SlateGray" Foreground="White" BorderThickness="0" FontSize="10"  Content="Settings" Padding="6" Margin="0 0 0 10" Width="140"/>
+
+            <Button Background="SlateGray" Foreground="White" BorderThickness="0" FontSize="10"  Content="Help" Padding="6" Margin="0 0 0 10" Width="140"/>
+
+            <Button Background="SlateGray" Foreground="White" BorderThickness="0" FontSize="10"  Content="About" Padding="6" Margin="0 0 0 10" Width="140"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
